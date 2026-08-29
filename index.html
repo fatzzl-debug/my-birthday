@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Happy Birthday Fatih 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =================================
+         BACKGROUND
+    ================================== -->
+
+    <div class="bg"></div>
+
+    <div id="particles"></div>
+
+    <div id="hearts"></div>
+
+    <div id="confetti"></div>
+
+    <div id="fireworks"></div>
+
+
+    <!-- =================================
+         MUSIC
+    ================================== -->
+
+    <audio id="birthdayMusic" loop>
+        <source src="music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicBtn" class="music-btn">
+        🎵
+    </button>
+
+
+    <!-- =================================
+         TOP BAR
+    ================================== -->
+
+    <div class="top">
+
+        <div class="logo">
+            🎂 FATIH
+        </div>
+
+        <div class="slide-counter">
+            <span id="currentSlide">1</span>
+            /
+            <span>4</span>
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         SLIDE 1
+    ================================== -->
+
+    <section class="slide active" id="slide1">
+
+        <div class="hero">
+
+            <div class="cake">
+                🎂
+            </div>
+
+            <p class="mini-title">
+                ✨ TODAY IS A SPECIAL DAY ✨
+            </p>
+
+            <h1>
+                HAPPY
+                <span>BIRTHDAY</span>
+            </h1>
+
+            <h2>
+                FATIH
+            </h2>
+
+            <p class="description">
+                Hari ini bukan hari biasa...
+                karena seseorang yang luar biasa
+                sedang bertambah usia. 🎉
+            </p>
+
+            <div class="countdown">
+
+                <div>
+                    <strong id="days">00</strong>
+                    <small>Hari</small>
+                </div>
+
+                <div>
+                    <strong id="hours">00</strong>
+                    <small>Jam</small>
+                </div>
+
+                <div>
+                    <strong id="minutes">00</strong>
+                    <small>Menit</small>
+                </div>
+
+                <div>
+                    <strong id="seconds">00</strong>
+                    <small>Detik</small>
+                </div>
+
+            </div>
+
+            <button
+                class="primary-btn"
+                onclick="nextSlide()"
+            >
+                BUKA KEJUTAN
+                →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         SLIDE 2 - FOTO
+    ================================== -->
+
+    <section class="slide" id="slide2">
+
+        <div class="photo-section">
+
+            <p class="section-label">
+                📸 A SPECIAL MOMENT
+            </p>
+
+            <h2>
+                Ini <span>Fatih!</span>
+            </h2>
+
+            <div class="photo-card">
+
+                <div class="photo-glow"></div>
+
+                <img
+                    src="foto/fatih.jpg"
+                    alt="Foto Fatih"
+                    class="birthday-photo"
+                >
+
+                <div class="photo-caption">
+
+                    <strong>
+                        HAPPY BIRTHDAY 🎂
+                    </strong>
+
+                    <p>
+                        Keep smiling, keep dreaming,
+                        and keep being awesome!
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button
+                class="primary-btn"
+                onclick="nextSlide()"
+            >
+                LANJUT
+                →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         SLIDE 3 - SURAT
+    ================================== -->
+
+    <section class="slide" id="slide3">
+
+        <div class="letter">
+
+            <div class="envelope">
+                💌
+            </div>
+
+            <p class="section-label">
+                💌 A MESSAGE FOR YOU
+            </p>
+
+            <h2>
+                Dear <span>Fatih</span>
+            </h2>
+
+            <div class="line"></div>
+
+            <p
+                id="typing"
+                class="typing"
+            ></p>
+
+            <button
+                class="primary-btn"
+                onclick="nextSlide()"
+            >
+                ADA KEJUTAN LAGI 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         SLIDE 4 - INTERACTIVE
+    ================================== -->
+
+    <section class="slide" id="slide4">
+
+        <div class="final-card">
+
+            <div class="gift">
+                🎁
+            </div>
+
+            <h2>
+                MAKE A <span>WISH!</span>
+            </h2>
+
+            <p>
+                Tulis pesan atau harapanmu
+                untuk hari spesial ini.
+            </p>
+
+            <textarea
+                id="wish"
+                placeholder="Tulis pesan di sini..."
+            ></textarea>
+
+            <button
+                class="whatsapp-btn"
+                onclick="sendWhatsApp()"
+            >
+                📲 KIRIM KE WHATSAPP
+            </button>
+
+            <button
+                class="celebrate-btn"
+                onclick="celebrate()"
+            >
+                🎆 RAYAKAN!
+            </button>
+
+            <button
+                class="back-btn"
+                onclick="goHome()"
+            >
+                ↻ Mulai Lagi
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         NAVIGATION
+    ================================== -->
+
+    <div class="navigation">
+
+        <button onclick="previousSlide()">
+            ←
+        </button>
+
+        <div class="dots">
+
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
+
+        <button onclick="nextSlide()">
+            →
+        </button>
+
+    </div>
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer>
+        Made with ❤️ for Fatih
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
